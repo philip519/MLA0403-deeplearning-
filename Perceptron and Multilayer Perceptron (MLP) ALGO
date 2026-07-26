@@ -1,0 +1,8 @@
+Algorithm
+1. Import the required libraries.
+2. Create a linearly separable dataset.
+3. Train the Perceptron model.
+4. Predict the class labels.
+5. Calculate the accuracy.
+6. Repeat the process for a non-linearly separable dataset.
+7. Compare the results.
