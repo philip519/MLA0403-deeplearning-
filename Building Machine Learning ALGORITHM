@@ -1,0 +1,9 @@
+Algorithm:
+1. Import the required libraries.
+2. Load the Iris classification dataset.
+3. Split the dataset into training and testing sets.
+4. Train a Decision Tree Classifier.
+5. Predict the class labels for the test data.
+6. Calculate the accuracy of the model.
+7. Generate the confusion matrix.
+8. Display the results.
