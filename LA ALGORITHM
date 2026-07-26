@@ -1,0 +1,14 @@
+Algorithm:
+1. Import the required libraries (NumPy and Matplotlib).
+2. Create a sample dataset with input (X) and output (Y) values.
+3. Initialize the weight (m) and bias (b) to zero.
+4. Set the learning rate and the number of iterations.
+5. For each iteration:
+o Predict the output using Y = mX + b.
+o Calculate the Mean Squared Error (MSE).
+o Compute the gradients of m and b.
+o Update m and b using Gradient Descent.
+o Store the loss value.
+Display the final values of m, b, and the loss.
+Plot the learning curve and the regression line.
+6. 7
