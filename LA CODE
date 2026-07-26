@@ -1,0 +1,47 @@
+Code:
+import numpy as np
+import matplotlib.pyplot as plt
+X = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], dtype=float)
+Y = np.array([2, 4, 5, 4, 5, 7, 8, 9, 10, 12], dtype=float)
+# Initialize Parameters
+m = 0
+b = 0
+learning_rate = 0.01
+iterations = 1000
+n = len(X)
+losses = []
+# Gradient Descent
+for i in range(iterations):
+# Prediction
+Y_pred = m * X + b
+# Mean Squared Error
+loss = (1 / n) * np.sum((Y - Y_pred) ** 2)
+losses.append(loss)
+# Compute Gradients
+dm = (-2 / n) * np.sum(X * (Y - Y_pred))
+db = (-2 / n) * np.sum(Y - Y_pred)
+# Update Parameters
+m = m - learning_rate * dm
+b = b - learning_rate * db
+# Print Results
+print("Final Weight (m):", round(m, 3))
+print("Final Bias (b):", round(b, 3))
+print("Final Loss:", round(losses[-1], 4))
+# Plot Learning Curve (Skip first 10 iterations for better visualization)
+plt.figure(figsize=(6,4))
+plt.plot(range(10, iterations), losses[10:], color='blue')
+plt.title("Learning Curve")
+plt.xlabel("Iterations")
+plt.ylabel("Loss (MSE)")
+plt.grid(True)
+plt.show()
+# Plot Regression Line
+plt.figure(figsize=(6,4))
+plt.scatter(X, Y, color='blue', label='Actual Data')
+plt.plot(X, m * X + b, color='red', linewidth=2, label='Regression Line')
+plt.title("Linear Regression using Gradient Descent")
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.legend()
+plt.grid(True)
+plt.show()
