@@ -1,0 +1,6 @@
+Algorithm
+1. Import the required libraries.
+2. Create a regression dataset.
+3. Train a Batch Gradient Descent model.
+4. Train an SGD model.
+5. Compare their Mean Squared Error (MSE).
