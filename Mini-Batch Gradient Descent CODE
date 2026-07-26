@@ -1,0 +1,48 @@
+Code:
+import numpy as np
+import matplotlib.pyplot as plt
+# Create Dataset
+X = np.arange(1, 21, dtype=float)
+X = X / np.max(X) # Normalize inputs
+Y = 2 * X + 1 # y = 2x + 1
+learning_rate = 0.001
+epochs = 100
+batch_sizes = [1, 5, 10]
+plt.figure(figsize=(8,5))
+for batch_size in batch_sizes:
+# Initialize parameters
+w = 0.0
+b = 0.0
+losses = []
+for epoch in range(epochs):
+# Shuffle dataset
+indices = np.random.permutation(len(X))
+X_shuffled = X[indices]
+Y_shuffled = Y[indices]
+# Mini-Batch Training
+for i in range(0, len(X), batch_size):
+X_batch = X_shuffled[i:i + batch_size]
+Y_batch = Y_shuffled[i:i + batch_size]
+# Prediction
+Y_pred = w * X_batch + b
+# Gradients
+dw = (-2 / len(X_batch)) * np.sum(X_batch * (Y_batch - Y_pred))
+db = (-2 / len(X_batch)) * np.sum(Y_batch - Y_pred)
+# Update parameters
+w -= learning_rate * dw
+b -= learning_rate * db
+# Calculate loss after each epoch
+Y_pred_all = w * X + b
+loss = np.mean((Y - Y_pred_all) ** 2)
+losses.append(loss)
+plt.plot(losses, linewidth=2, label=f"Batch Size = {batch_size}")
+plt.title("Mini-Batch Gradient Descent")
+plt.xlabel("Epochs")
+plt.ylabel("Mean Squared Error (Loss)")
+plt.legend()
+plt.grid(True)
+plt.show()
+# Print final parameters
+print("Final Weight:", round(w, 4))
+print("Final Bias:", round(b, 4))
+print("Final Loss:", round(losses[-1], 6))
