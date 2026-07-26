@@ -1,0 +1,7 @@
+Algorithm:
+1. Import the NumPy library.
+2. Define the input values, weights, and bias.
+3. Calculate the weighted sum of the inputs.
+4. Apply the Sigmoid activation function.
+5. Apply the ReLU activation function.
+6. Display and compare the outputs of both activation functions.
