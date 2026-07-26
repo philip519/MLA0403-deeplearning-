@@ -1,0 +1,7 @@
+Algorithm
+1. Import the required libraries.
+2. Create a simple linear dataset.
+3. Initialize weight and bias.
+4. Apply Gradient Descent using different learning rates.
+5. Record the loss for each iteration.
+6. Compare the convergence speed.
