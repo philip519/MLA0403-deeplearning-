@@ -1,0 +1,8 @@
+Algorithm:
+1. Import the required libraries.
+2. Set the actual mean and variance of the normal distribution.
+3. Generate synthetic data using NumPy.
+4. Estimate the mean using the sample average (MLE).
+5. Estimate the variance using the MLE formula.
+6. Print the actual and estimated values.
+7. Plot a histogram of the generated data.
