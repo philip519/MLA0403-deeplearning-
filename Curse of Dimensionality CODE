@@ -1,0 +1,49 @@
+Code:
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+from scipy.spatial.distance import pdist
+dimensions = [2, 5, 10, 20, 50]
+avg_distances = []
+accuracies = []
+for dim in dimensions:
+X, y = make_classification(
+n_samples=500,
+n_features=dim,
+n_informative=max(2, dim//2),
+n_redundant=0,
+random_state=42
+)
+# Average distance between points
+avg_distance = np.mean(pdist(X))
+avg_distances.append(avg_distance)
+# Train-Test Split
+X_train, X_test, y_train, y_test = train_test_split(
+X, y, test_size=0.3, random_state=42
+)
+# KNN Model
+model = KNeighborsClassifier(n_neighbors=5)
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+accuracies.append(accuracy)
+print(f"Dimensions = {dim}, Average Distance = {avg_distance:.2f}, Accuracy = {accuracy:.2f}")
+# Plot Results
+plt.figure(figsize=(10,4))
+plt.subplot(1,2,1)
+plt.plot(dimensions, avg_distances, marker='o')
+plt.title("Dimension vs Average Distance")
+plt.xlabel("Dimensions")
+plt.ylabel("Average Distance")
+plt.grid(True)
+plt.subplot(1,2,2)
+plt.plot(dimensions, accuracies, marker='o', color='red')
+plt.title("Dimension vs Accuracy")
+plt.xlabel("Dimensions")
+plt.ylabel("Accuracy")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
