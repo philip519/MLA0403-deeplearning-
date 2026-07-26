@@ -1,0 +1,26 @@
+Code
+import numpy as np
+import matplotlib.pyplot as plt
+# Dataset
+X = np.array([1,2,3,4,5], dtype=float)
+Y = np.array([2,4,6,8,10], dtype=float)
+learning_rates = [0.001, 0.01, 0.1]
+plt.figure(figsize=(6,4))
+for lr in learning_rates:
+w = 0
+b = 0
+losses = []
+for i in range(100):
+y_pred = w * X + b
+loss = np.mean((Y - y_pred) ** 2)
+losses.append(loss)
+dw = (-2/len(X)) * np.sum(X * (Y - y_pred))
+db = (-2/len(X)) * np.sum(Y - y_pred)
+w -= lr * dw
+b -= lr * db
+plt.plot(losses, label=f"LR={lr}")
+plt.xlabel("Iterations")
+plt.ylabel("Loss")
+plt.title("Gradient Descent Learning Rates")
+plt.legend()
+plt.show()
