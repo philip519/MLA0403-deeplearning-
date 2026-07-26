@@ -1,0 +1,8 @@
+Algorithm
+1. Import the required libraries.
+2. Generate datasets with different dimensions.
+3. Split each dataset into training and testing sets.
+4. Train a K-Nearest Neighbors (KNN) classifier.
+5. Calculate the average distance between data points.
+6. Measure the classification accuracy.
+7. Plot the effect of dimensionality on distance and accuracy.
