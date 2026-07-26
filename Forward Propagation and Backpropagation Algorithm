@@ -1,0 +1,7 @@
+Algorithm
+1. Define the input values.
+2. Assign weights and bias.
+3. Calculate the weighted sum.
+4. Apply the sigmoid activation function.
+5. Display the neuron output.
+6. Verify the result using Python.
