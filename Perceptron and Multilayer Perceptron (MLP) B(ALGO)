@@ -1,0 +1,7 @@
+Algorithm
+1. Import the required libraries.
+2. Create a non-linearly separable dataset.
+3. Train the Perceptron model.
+4. Train the MLP model.
+5. Predict the outputs.
+6. Compare the accuracies.
