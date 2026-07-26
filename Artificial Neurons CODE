@@ -1,0 +1,22 @@
+Code:
+import numpy as np
+# Input values
+inputs = np.array([1.5, 2.0, -1.0])
+# Weights
+weights = np.array([0.8, -0.5, 0.3])
+# Bias
+bias = 0.2
+# Weighted Sum
+z = np.dot(inputs, weights) + bias
+# Sigmoid Activation
+def sigmoid(x):
+return 1 / (1 + np.exp(-x))
+# ReLU Activation
+def relu(x):
+return np.maximum(0, x)
+# Outputs
+sigmoid_output = sigmoid(z)
+relu_output = relu(z)
+print("Weighted Sum (z):", round(z, 3))
+print("Sigmoid Output:", round(sigmoid_output, 3))
+print("ReLU Output:", round(relu_output, 3))
