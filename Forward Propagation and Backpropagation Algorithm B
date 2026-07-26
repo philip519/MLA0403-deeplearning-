@@ -1,0 +1,7 @@
+Algorithm
+1. Define inputs, target, weights, and bias.
+2. Perform forward propagation.
+3. Calculate the error.
+4. Compute the gradient.
+5. Update weights and bias using the learning rate.
+6. Display the updated values.
