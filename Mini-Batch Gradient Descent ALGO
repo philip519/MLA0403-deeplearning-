@@ -1,0 +1,8 @@
+Algorithm
+1. Import the required libraries.
+2. Create a simple linear regression dataset.
+3. Initialize weights and bias.
+4. Divide the training data into mini-batches.
+5. Update the weights and bias for each mini-batch.
+6. Calculate the loss after each epoch.
+7. Compare the convergence for different batch sizes.
