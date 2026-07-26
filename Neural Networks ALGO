@@ -1,0 +1,8 @@
+Algorithm
+1. Import the required libraries.
+2. Create a small non-linear dataset (XOR dataset).
+3. Build a neural network with one hidden layer.
+4. Train the model using the training data.
+5. Predict the outputs for the input data.
+6. Display the predicted values and accuracy.
+7. Analyze how the hidden layer learns the non-linear relationship.
