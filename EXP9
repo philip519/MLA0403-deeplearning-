@@ -1,0 +1,11 @@
+names <- c("siri", "mahi", "chiru")
+age <- c(23, 24, 25)
+marks <- c(88, 78, 25)
+
+df <- data.frame(names, age, marks)
+
+iqr_value <- IQR(df$age)
+
+print(iqr_value)
+
+write.csv(df, "datafr.csv", row.names = FALSE)
