@@ -1,6 +1,0 @@
-Age <- c(21,25,30,35,40,45,50,55,60,65)
-Insulin <- c(15,18,20,24,28,30,35,38,42,45)
-
-result <- cor(Age, Insulin)
-
-print(result)
